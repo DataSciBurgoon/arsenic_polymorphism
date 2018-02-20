@@ -1,0 +1,13 @@
+
+data {
+  int<lower=0> N;     //number of items
+  int y;           // y number of successes
+}
+parameters {
+  real <lower=0, upper=1> theta;
+}
+model {
+  theta ~ beta(1.15, 4);
+  y ~ binomial(N, theta);
+}
+
